@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TaskFlow</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <main class="container">
+
+    <!-- =========================
+     AUTH SECTION
+========================== -->
+    <section id="auth-section" class="auth">
+
+      <div class="card glass auth-card">
+
+        <div class="logo">TaskFlow</div>
+
+        <p class="subtitle">
+          Manage your tasks. Stay focused.
+        </p>
+
+        <!-- Login / Signup Tabs -->
+        <div class="tabs">
+          <button id="login-tab" class="active" type="button">
+            Login
+          </button>
+
+          <button id="signup-tab" type="button">
+            Sign Up
+          </button>
+        </div>
+
+        <!-- Authentication Message -->
+        <div id="auth-message" class="message hidden"></div>
+
+        <!-- Login Form -->
+        <form id="login-form" class="auth-form">
+
+          <input type="email" id="login-email" placeholder="Email" required />
+
+          <input type="password" id="login-password" placeholder="Password" required />
+
+          <button type="submit" id="login-btn" class="primary">
+            Login
+          </button>
+
+        </form>
+
+        <!-- Signup Form -->
+        <form id="signup-form" class="auth-form hidden">
+
+          <input type="email" id="signup-email" placeholder="Email" required />
+
+          <input type="password" id="signup-password" placeholder="Password" required />
+
+          <button type="submit" id="signup-btn" class="primary">
+            Sign Up
+          </button>
+
+        </form>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+     DASHBOARD SECTION
+========================== -->
+    <section id="dashboard-section" class="dashboard hidden">
+
+      <!-- Dashboard Header -->
+      <header class="dashboard-header">
+
+        <div class="logo">
+          TaskFlow
+        </div>
+
+        <div class="welcome">
+          Welcome,
+          <span id="user-email"></span>
+        </div>
+
+        <button id="logout-btn" class="secondary" type="button">
+          Logout
+        </button>
+
+      </header>
+
+
+      <!-- Dashboard Card -->
+      <div class="card glass dashboard-card">
+
+        <!-- Page Header -->
+        <div class="header-actions">
+
+          <h2 class="page-title">
+            My Tasks
+          </h2>
+
+          <button id="add-task-btn" class="primary" type="button">
+            Add Task
+          </button>
+
+        </div>
+
+        <p class="page-subtitle">
+          Stay organized and productive.
+        </p>
+
+
+        <!-- Statistics -->
+        <div class="stats">
+
+          <div class="stat-card">
+            <span id="total-count">0</span>
+            <span>Total</span>
+          </div>
+
+          <div class="stat-card">
+            <span id="pending-count">0</span>
+            <span>Pending</span>
+          </div>
+
+          <div class="stat-card">
+            <span id="completed-count">0</span>
+            <span>Completed</span>
+          </div>
+
+        </div>
+
+
+        <!-- Filters -->
+        <div class="filter-bar">
+
+          <button class="filter-btn active" data-filter="all" type="button">
+            All
+          </button>
+
+          <button class="filter-btn" data-filter="pending" type="button">
+            Pending
+          </button>
+
+          <button class="filter-btn" data-filter="completed" type="button">
+            Completed
+          </button>
+
+        </div>
+
+
+        <!-- Task List -->
+        <ul id="task-list" class="task-list"></ul>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- ========================= ADD / EDIT TASK MODAL ========================== -->
+
+  <div id="task-modal" class="modal hidden">
+
+    <div class="modal-content glass">
+
+      <div class="modal-header">
+
+        <h3 id="modal-title">
+          Add Task
+        </h3>
+
+      </div>
+
+      <input type="text" id="modal-task-title" placeholder="Title" required />
+
+      <textarea id="modal-task-desc" placeholder="Description"></textarea>
+
+      <div class="modal-actions">
+
+        <button id="modal-save" class="primary" type="button">
+          Save
+        </button>
+
+        <button id="modal-cancel" class="secondary" type="button">
+          Cancel
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+
+</body>
+
+</html>
